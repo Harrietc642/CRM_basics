@@ -9,18 +9,16 @@
   <div class="card customer">
     <div class="card-content">
     <p class="title is-4">
-      <% if name_is_link %>
-        <%= link_to customer.name, customer %>
-      <% else %>
         <%= customer.full_name %>
-      <% end %>
     </p>
     <ul>
+      <% if customer.email_address.present? %>
+        <li>
+          <strong>Email:</strong> <%= customer.email_address %>
+        </li>
+      <% end %>
       <li>
-        <strong>Phone: +1:</strong> <%= customer.phone_number %>
-      </li>
-      <li>
-        <strong>Email:</strong> <%= customer.email_address%>
+        <strong>Phone Number:</strong> <%= customer.phone_number%>
       </li>
       <li>
         <strong>Notes:</strong> <%= customer.Notes %>
